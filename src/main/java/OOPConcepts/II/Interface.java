@@ -1,13 +1,10 @@
 package OOPConcepts.II;
 
 public interface Interface {
-   void addContact(int item, int phoneNumber, String firstName, String lastName);
-   void listContacts(Phone phone);
+   void addContact(int item, String phoneNumber, String firstName, String lastName);
+    void listContacts();
+   void sendMessage(String phoneNumber, String messageContent);
 
-   void sendMessage(int phoneNumber, String messageContent);
-   void listMessages(int phoneNumber);
-   void call(int phoneNumber);
-   void viewHistory();
-
+ void listMessages (String reciverNumber);
 }
 
