@@ -5,6 +5,8 @@ public class SamsungGalaxyS8 extends Samsung {
         super(color, material, imei);
         this.batteryLife = 12;
     }
+
 }
+
 
 

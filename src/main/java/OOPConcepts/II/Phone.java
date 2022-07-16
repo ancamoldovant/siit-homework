@@ -1,9 +1,8 @@
 package OOPConcepts.II;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
-public abstract class Phone implements Interface  {
+public abstract class Phone implements Interface {
     protected int batteryLife;
     protected String color;
     protected String material;
@@ -13,33 +12,58 @@ public abstract class Phone implements Interface  {
         this.color = color;
         this.material = material;
         this.imei = imei;
+        this.batteryLife=batteryLife;
     }
 
     private ArrayList<Contact> contacts = new ArrayList<Contact>();
-   @Override
+
+    @Override
     public void addContact(int item, String phoneNumber, String firstName, String lastName) {
         Contact contact = new Contact(item, phoneNumber, firstName, lastName);
         contacts.add(contact);
     }
+
     @Override
     public void listContacts() {
-        System.out.println(contacts);
+        System.out.println("Contacts: " + contacts);
     }
-    private ArrayList<Message> messages = new ArrayList<Message>();
+
+    private ArrayList<Message> messages = new ArrayList<>();
+
     @Override
     public void sendMessage(String phoneNumber, String messageContent) {
         Message message = new Message(phoneNumber, messageContent);
         messages.add(message);
-
+        int chars = 100;
+        if ( messageContent.length() > chars) {
+            throw new
+                    IllegalArgumentException("A message can have maximum 100 chars");
+        }
+        batteryLife=batteryLife-1;
+        System.out.println("BatteryLife after send message: " + batteryLife);
     }
     @Override
     public void listMessages(String receiverNumber, String phoneNumber) {
         for (Message message : messages) ;
-        if(receiverNumber.equals(phoneNumber));
+        if (receiverNumber.equals(phoneNumber)) ;
         System.out.println(messages);
 
     }
+
+    private ArrayList<Call> calls = new ArrayList<>();
+@Override
+    public void call(String callPhoneNumber){
+        Call call= new Call(callPhoneNumber);
+        calls.add(call);
+       batteryLife=batteryLife-2;
+     System.out.println("BatteryLife after call: " + batteryLife);
 }
 
+    @Override
+    public void viewHistory() {
+        for (Call call : calls) ;
+        System.out.println("call list:"+ calls);;
+    }
+}
 
 

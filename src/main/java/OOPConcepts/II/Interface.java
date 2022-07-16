@@ -6,5 +6,7 @@ public interface Interface {
     void sendMessage(String phoneNumber, String messageContent);
 
     void listMessages (String phoneNumber, String reciverNumber);
+    void call(String phoneNumber);
+    void viewHistory();
 }
 

@@ -4,7 +4,7 @@ public class Contact {
     private   int item;
     private String firstName;
     private String lastName;
-    private String phoneNumber;
+    protected String phoneNumber;
 
     public Contact( int item, String phoneNumber, String firstName, String lastName) {
         this.item = item;
@@ -12,10 +12,11 @@ public class Contact {
         this.firstName=firstName;
         this.lastName=lastName;
     }
+    public Contact(String phoneNumber) {
+    }
     public int getItem() {
         return item;
     }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
