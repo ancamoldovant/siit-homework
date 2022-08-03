@@ -2,7 +2,8 @@ package ObjectContainers;
 
 public class Adresa {
     private String countries;
-    public String getCountries() {
+    public String
+    getCountries() {
         return countries;
     }
 

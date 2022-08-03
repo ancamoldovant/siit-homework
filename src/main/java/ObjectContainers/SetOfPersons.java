@@ -2,7 +2,7 @@ package ObjectContainers;
 import java.util.*;
 
 public class SetOfPersons {
-    public static void main{
+    public static void main(String[] args){
 
     Person person1=new Student("Moldovan Ioan", "34");
     Person person2=new Angajat("Popescu Vasile", "45");
@@ -47,16 +47,15 @@ public class SetOfPersons {
         hobbyAdress.put(adresa2, hobby2);
 
 
-        Map< Person, List<Hobby>> personHobby = new HashMap<>();{
-            personHobby.put(person1, Arrays.asList(hobby1, hobby2));//in this list you can store the hobbies for person1
-            for(Person person : personHobby.keySet()){
-                System.out.println(person + " > " +  personHobby.get(person));
-            }
+//        Map< Person, List<Hobby>> personHobby = new HashMap<>();{
+//            personHobby.put(person1, Arrays.asList(hobby1));//in this list you can store the hobbies for person1
+//            for(Person person : personHobby.keySet()){
+//                System.out.println(person + " > " +  personHobby.get(person) + hobbyAdress.get(hobby));
+//            }
 
-
-            for(Map.Entry<Person, List<Hobby>> entry: personHobby.entrySet()){
-                System.out.println(entry.getKey() + ">" + entry.getValue());
-            }
+//            for(Map.Entry<Person, List<Hobby>> entry: personHobby.entrySet()){
+//                System.out.println(entry.getKey() + ">" + entry.getValue());
+//            }
 
     }
-}}
+}
