@@ -31,7 +31,8 @@ public class Main {
        vehicle.start();
        vehicle.drive(1);
        vehicle.stop();
-       double car1AvailableFuel = vehicle.AvailableFuelMethod();
+       double car1AvailableFuel = vehicle
+               .AvailableFuelMethod();
        System.out.println("AvailableFuel " + car1AvailableFuel + " l");
         //float fuleConsumedPer100Km = car.AverageFuelConsumption();
         System.out.println("ConsumedPer100Km:" + fuelConsumedPer100Km + " l");

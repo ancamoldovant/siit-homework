@@ -40,6 +40,7 @@ public  abstract class Car implements Vehicle {
    }
 
    public int shiftGear(int gear) {
+
       if (gear > gears) {
          throw new
                  IllegalArgumentException("This car has maximum 6 gears");
