@@ -5,7 +5,7 @@ public interface Interface {
     void listContacts();
     void sendMessage(String phoneNumber, String messageContent);
 
-    void listMessages (String phoneNumber, String reciverNumber);
+    void listMessages (String receiverNumber);
     void call(String phoneNumber);
     void viewHistory();
 }

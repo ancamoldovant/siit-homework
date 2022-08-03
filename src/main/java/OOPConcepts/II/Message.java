@@ -1,23 +1,26 @@
 package OOPConcepts.II;
 
 public class Message {
-   protected String reciverNumber;
-    protected String messageContent;
-    public Message(String reciverNumber, String messageContent) {
-        this.reciverNumber = reciverNumber;
+
+    public String receiverNumber;;
+   public String messageContent;;
+
+    public Message(String receiverNumber, String messageContent) {
+        this.receiverNumber = receiverNumber;
         this.messageContent = messageContent;
     }
-    public Message(String color, String material, int imei) {
+    public Message() {
+
     }
     public String getMessageContent() {
         return messageContent;
     }
-    public String getReciverNumber() {
-        return reciverNumber;
+    public String getReceiverNumber() {
+        return receiverNumber;
     }
 
     @Override
     public String toString() {
-        return (reciverNumber+ "," + messageContent);
+        return (receiverNumber + "," + messageContent);
     }
 }
