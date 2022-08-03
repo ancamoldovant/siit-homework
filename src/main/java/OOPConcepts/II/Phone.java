@@ -1,6 +1,7 @@
 package OOPConcepts.II;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class Phone implements Interface {
     protected int batteryLife;
@@ -29,10 +30,10 @@ public abstract class Phone implements Interface {
     }
 
     private ArrayList<Message> messages = new ArrayList<>();
-
+    Message message = new Message();
     @Override
     public void sendMessage(String phoneNumber, String messageContent) {
-        Message message = new Message(phoneNumber, messageContent);
+        Message message = new Message(phoneNumber,messageContent);
         messages.add(message);
         int chars = 100;
         if ( messageContent.length() > chars) {
@@ -43,10 +44,10 @@ public abstract class Phone implements Interface {
         System.out.println("BatteryLife after send message: " + batteryLife);
     }
     @Override
-    public void listMessages(String receiverNumber, String phoneNumber) {
+    public void listMessages(String receiverNumber) {
         for (Message message : messages) ;
-        if (receiverNumber.equals(phoneNumber)) ;
-        System.out.println(messages);
+        if (contacts.equals(message.getReceiverNumber())) ;
+        System.out.println(message.messageContent);
 
     }
 
