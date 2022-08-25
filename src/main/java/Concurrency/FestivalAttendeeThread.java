@@ -2,14 +2,15 @@ package Concurrency;
 
 public class FestivalAttendeeThread extends Thread {
 
-    private FestivalGate run;
+    private FestivalGate festivalGate;
 
-    public FestivalAttendeeThread(FestivalGate run) {
-        this.run = run;
+    public FestivalAttendeeThread(FestivalGate festivalGate) {
+        this.festivalGate = festivalGate;
     }
 
     @Override
-    public void run() {run.run(RandomEnumTicketType.randomEnumTicketType(), "gate");
+    public void run() {
+        festivalGate.validateTicket(RandomEnumTicketType.randomEnumTicketType(), "gate");
     }
-}
 
+}

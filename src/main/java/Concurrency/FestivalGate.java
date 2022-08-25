@@ -14,34 +14,23 @@ public class FestivalGate {
         this.ticketType = RandomEnumTicketType.randomEnumTicketType();
         this.gate = gate;
     }
-
-    public void run(RandomEnumTicketType ticketType, String gate) {
-        if (validateTicket()) {
-            arrivingAttendee();
-        }
-        countTickets();
-    }
-
-    public boolean validateTicket() {
+    public boolean validateTicket(RandomEnumTicketType ticketType, String gate) {
         Queue<RandomEnumTicketType> festivalAttendee = new LinkedList<>();
         for (int i = 0; i < 2; i++) {
             festivalAttendee.add(RandomEnumTicketType.randomEnumTicketType());
+            arrivingAttendee();
             Iterator iterator = festivalAttendee.iterator();
             while (iterator.hasNext()) {
                 System.out.println(iterator.next());
             }
-            int countTickets = 0;
-            if (ticketType == RandomEnumTicketType.oneDayVip) {
-                countTickets++;
-                System.out.println(countTickets + " " + "people have oneDayVip tickets");
-                //System.out.println(festivalAttendee.size() + " people entered");
-            }
         }
         return false;
     }
-
-    public void countTickets() {
+    public void countTickets(Queue<RandomEnumTicketType> festivalAttendee) {
+        sleepFiveSeconds();
+        System.out.println("Statistics");
         for (int i = 0; i < festivalAttendee.size(); i++) {
+            System.out.println(festivalAttendee.size());
         int countTickets = 0;
         if (ticketType == RandomEnumTicketType.oneDayVip) {
             countTickets++;
@@ -56,9 +45,15 @@ public class FestivalGate {
     }}
      private void arrivingAttendee() {
     try {
-        System.out.println("Arriving");
         Thread.sleep(1000);
     } catch (InterruptedException e) {
         throw new RuntimeException(e);
-    }
+    }}
+         private void sleepFiveSeconds() {
+             try {
+                 System.out.println("Arriving");
+                 Thread.sleep(5000);
+             } catch (InterruptedException e) {
+                 throw new RuntimeException(e);
+             }
 }}

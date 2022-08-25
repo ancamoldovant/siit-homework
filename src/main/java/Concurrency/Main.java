@@ -8,5 +8,5 @@ public class Main {
     FestivalAttendeeThread festivalAttendee = new FestivalAttendeeThread(new FestivalGate());
     festivalAttendee.start();
     FestivalStatisticsThread festivalStatisticsThread=new FestivalStatisticsThread(new FestivalGate());
-   // festivalStatisticsThread.start();
+    festivalStatisticsThread.start();
 }}
