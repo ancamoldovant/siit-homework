@@ -7,15 +7,14 @@ import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Java8 {
+public class TestPersonReader {
     @Test
-    public void test_writeOrderedList() throws IOException, URISyntaxException {
+    public void test_readOrderedList() throws IOException, URISyntaxException {
         Path path = Paths.get(this.getClass().getResource("/java8/listOfPersons.txt").toURI());
-        List<String> orderedList = PrintWriter.writeOrderedList(path);
+        List<String> orderedList = PersonReader.readOrderedList(path);
 
         assertEquals("Aioanei Vlad", orderedList.get(0));
         assertEquals("Bunescu Ion", orderedList.get(1));

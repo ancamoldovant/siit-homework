@@ -8,8 +8,8 @@ import java.util.List;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 
-public class PrintWriter {
-    public static List<String> writeOrderedList(Path path) throws IOException {
+public class PersonReader {
+    public static List<String> readOrderedList(Path path) throws IOException {
         return Files.readAllLines(path).stream()
                 .map(Person::parse)
                 .filter(d -> d.getMonthOfBirth().equals("11"))
